@@ -66,7 +66,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>parksy.net.j8.J8Application</mainClass>
+                            <mainClass>net.parksy.j8.J8Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
