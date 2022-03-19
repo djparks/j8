@@ -15,6 +15,9 @@
 * https://aragost.com/blog/java/picocli-introduction/
 * https://picocli.info/quick-guide.html
 
+### Thymeleaf
+https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf#creating-and-configuring-the-template-engine
+
 ###Case: 
 * https://www.geeksforgeeks.org/convert-camel-case-string-to-snake-case-in-java/
 * https://javascript.plainenglish.io/convert-string-to-different-case-styles-snake-kebab-camel-and-pascal-case-in-javascript-da724b7220d7
@@ -22,6 +25,10 @@
 * Kebab case: kebab-case
 * Camel case: camelCase
 * Pascal case: MainBuilding
+
+###Misc
+* Load data on startup: https://www.onlinetutorialspoint.com/spring-boot/spring-boot-how-to-load-initial-data-on-startup.html
+* CSV on startup: https://www.onlinetutorialspoint.com/spring-boot/spring-boot-batch-example-csv-to-database.html
 
 ### Possible Interesting Approach
 * https://reflectoring.io/spring-shell/
