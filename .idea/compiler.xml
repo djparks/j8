@@ -9,8 +9,5 @@
         <module name="j8" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="picocli" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
