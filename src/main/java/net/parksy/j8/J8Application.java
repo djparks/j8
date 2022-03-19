@@ -1,6 +1,8 @@
 package net.parksy.j8;
 
 import java.io.File;
+import java.util.List;
+
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -19,7 +21,18 @@ public class J8Application implements Runnable {
         System.out.printf("Loading %n");
 
         System.out.println("Read Data Line by Line With Header \n");
-        ReadCSV.readDataLineByLine(csv.getAbsolutePath());
+        List<List<String>> rows = ReadCSV.readDataLineByLine(csv.getAbsolutePath());
+        // Now Print what we've
+        if (rows == null) {
+            System.out.println("No data in CSV file");
+            System.exit(1);
+        }
+        for ( List<String> row : rows) {
+            for ( String col : row ) {
+                System.out.print( col + ", ");
+            }
+            System.out.println();
+        }
         System.out.println("_______________________________________________");
     }
 

@@ -4,12 +4,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.apache.commons.lang3.StringUtils.isEmpty;
+import java.util.*;
 
 public class ReadCSV {
 
@@ -45,14 +40,15 @@ public class ReadCSV {
 
     /**
      * Read a CSV file and place content into ArrayList of Map
-     * @param file
+     * @param file fileName
+     * @return List of Rows with Columns
      */
-    public static void readDataLineByLine(String file)
+    public static List<List<String>> readDataLineByLine(String file)
     {
 
         try {
             List<String> cols;
-            List<List> rows = new ArrayList<>();
+            List<List<String>> rows = new ArrayList<>();
             FileReader filereader = new FileReader(file);
 
             // create csvReader object passing
@@ -63,23 +59,16 @@ public class ReadCSV {
             // we are going to read data line by line
             while ((nextRecord = csvReader.readNext()) != null) {
                 cols = new ArrayList<>();
-                    for (String cell : nextRecord) {
-                        cols.add(cell);
-                    }
+                Collections.addAll(cols, nextRecord);
                     rows.add(cols);
             }
 
-            // Now Print what we've
-            for ( List row : rows) {
-                for ( Object col : row ) {
-                    System.out.print( col + ", ");
-                }
-                System.out.println();
-            }
+            return rows;
         }
         catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
 
