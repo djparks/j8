@@ -4,14 +4,19 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 public class ReadCSV {
 
-//    https://www.geeksforgeeks.org/reading-csv-file-java-using-opencsv/
-
-//    List allData = csvReader.readAll();
-
+    /**
+     * Read CSV into Array of Map?
+     * @param file
+     */
     public static void readAllDataAtOnce(String file)
     {
         try {
@@ -38,15 +43,16 @@ public class ReadCSV {
         }
     }
 
-    // Java code to illustrate reading a
-// CSV file line by line
+    /**
+     * Read a CSV file and place content into ArrayList of Map
+     * @param file
+     */
     public static void readDataLineByLine(String file)
     {
 
         try {
-
-            // Create an object of filereader
-            // class with CSV file as a parameter.
+            List<String> cols;
+            List<List> rows = new ArrayList<>();
             FileReader filereader = new FileReader(file);
 
             // create csvReader object passing
@@ -56,8 +62,17 @@ public class ReadCSV {
 
             // we are going to read data line by line
             while ((nextRecord = csvReader.readNext()) != null) {
-                for (String cell : nextRecord) {
-                    System.out.print(cell + "\t");
+                cols = new ArrayList<>();
+                    for (String cell : nextRecord) {
+                        cols.add(cell);
+                    }
+                    rows.add(cols);
+            }
+
+            // Now Print what we've
+            for ( List row : rows) {
+                for ( Object col : row ) {
+                    System.out.print( col + ", ");
                 }
                 System.out.println();
             }
