@@ -17,6 +17,7 @@
 
 ### Thymeleaf
 https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf#creating-and-configuring-the-template-engine
+https://github.com/rmoestl/C-3PO/blob/master/src/main/java/org/c_3po/generation/SiteGenerator.java#L304
 
 ###Case: 
 * https://www.geeksforgeeks.org/convert-camel-case-string-to-snake-case-in-java/
